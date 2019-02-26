@@ -3,6 +3,11 @@ def thisFunctionWillRun():
 	assert(1 == 2, "error this is always true")
 	print("thisFunctionWillRun")
 
+def thisFunctionIsEqual():
+	if __debug__:
+		if not 1 == 2 : raise AssertionError("error this is always true")
+	print("thisFunctionWillRun")
+
 def thisFunctionWillNotRun():
 	assert 1 == 2, "error this is always false"
 	print("thisFunctionWillNotRun")
@@ -19,6 +24,7 @@ def assertionsAndArrays():
 
 def main():
 	thisFunctionWillRun()
+	thisFunctionIsEqual()
 	assertionsAndArrays()
 	try:
 		thisFunctionWillNotRun()
